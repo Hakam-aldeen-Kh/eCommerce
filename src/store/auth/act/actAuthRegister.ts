@@ -14,7 +14,7 @@ const actAuthRegister = createAsyncThunk(
   async (formData: TFormData, thunkAPI) => {
     const { rejectWithValue } = thunkAPI;
     try {
-      const response = await axios.post("/users", formData);
+      const response = await axios.post("/register", formData);
       return response.data;
     } catch (error) {
       return rejectWithValue(axiosErrorHandler(error));

@@ -14,7 +14,7 @@ const actPlaceOrder = createAsyncThunk(
       title: el.title,
       price: el.price,
       img: el.img,
-      quantity: cart.items[el.id],
+      quantity: cart.items[el.id as number],
     }));
     try {
       const response = await axios.post("orders", {

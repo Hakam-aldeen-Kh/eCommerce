@@ -12,7 +12,7 @@ const useWishlist = () => {
 
   const records = productsFullInfo.map((el) => ({
     ...el,
-    quantity: cartItems[el.id],
+    quantity: cartItems[el.id as number],
     isLiked: true,
     isAuthenticated: true,
   }));

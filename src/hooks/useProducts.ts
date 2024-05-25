@@ -23,8 +23,8 @@ const useProducts = () => {
 
   const productsFullInfo = records.map((el) => ({
     ...el,
-    quantity: cartItems[el.id],
-    isLiked: wishlistItemsId.includes(el.id),
+    quantity: cartItems[el.id as number],
+    isLiked: wishlistItemsId.includes(el.id as number),
     isAuthenticated: userAccessToken ? true : false,
   }));
 

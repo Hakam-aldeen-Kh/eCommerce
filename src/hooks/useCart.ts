@@ -29,7 +29,7 @@ const useCart = () => {
 
   const products = productsFullInfo.map((el) => ({
     ...el,
-    quantity: items[el.id],
+    quantity: items[el.id as number],
   }));
 
   const changeQuantityHandler = useCallback(

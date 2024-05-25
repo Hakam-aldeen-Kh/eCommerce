@@ -13,7 +13,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "@styles/global.css";
 
 const container = document.getElementById("root");
-const root = createRoot(container);
+const root = createRoot(container as HTMLElement);
 root.render(
   <Provider store={store}>
     <PersistGate loading={null} persistor={persistor}>

@@ -9,7 +9,7 @@ import ProductInfo from "../ProductInfo/ProductInfo";
 import { actLikeToggle } from "@store/Wishlist/wishlistSlice";
 
 import styles from "./styles.module.css";
-const {  maximumNotice, wishlistBtn } = styles;
+const { maximumNotice, wishlistBtn } = styles;
 
 const Product = ({
   id,
@@ -25,7 +25,7 @@ const Product = ({
   const [isBtnDisabled, setIsBtnDisabled] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const currentRemainingQuantity = max - (quantity ?? 0);
+  const currentRemainingQuantity = max as number - (quantity ?? 0);
   const quantityReachedToMax = currentRemainingQuantity <= 0 ? true : false;
   useEffect(() => {
     if (!isBtnDisabled) {
@@ -48,7 +48,7 @@ const Product = ({
     if (isAuthenticated) {
       if (!isLoading) {
         setIsLoading(true);
-        dispatch(actLikeToggle(id))
+        dispatch(actLikeToggle(id ?? 0))
           .unwrap()
           .then(() => setIsLoading(false))
           .catch(() => setIsLoading(false));
@@ -85,7 +85,7 @@ const Product = ({
         </p>
         <Button
           variant="info"
-          style={{ color: "white" , width: "100%"}}
+          style={{ color: "white", width: "100%" }}
           onClick={addToCartHandler}
           disabled={isBtnDisabled || quantityReachedToMax}
         >
