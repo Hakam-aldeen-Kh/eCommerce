@@ -13,6 +13,7 @@ function Categories() {
         <GridList
           emptyMessage="There are no categories"
           records={records}
+          type="category"
           renderItem={(record) => <Category {...record} />}
         />
       </Loading>
